@@ -1,4 +1,6 @@
-package week4.assignment.classroom;
+package week4.workout;
+
+
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -39,18 +41,11 @@ public class Erail {
 			
 			
 			List<WebElement> train = driver.findElements(By.xpath("//table[@class='DataTable TrainList TrainListHeader']//tr/td[2]/a"));
+			Thread.sleep(200);
+			Set<WebElement> setelement= new TreeSet<WebElement>(train);
 			
-			
-			List<String> lst=new ArrayList<String>();
-			for (WebElement trainnames : train) {
-			
-				lst.add(trainnames.getText());
-			
-		}
-			int listsize = lst.size();
-			Set<String> setelement= new TreeSet<String>(lst);
-		
-		System.out.println(lst);
+
+			int listsize = train.size();
 			
 			
 			int setsize = setelement.size();
@@ -66,3 +61,4 @@ public class Erail {
 	}
 
 }
+
